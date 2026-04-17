@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+condor_q $1 -format "%s" JobStatus | awk '{
+  if ($1 == 1) {print "IDLE"}
+  else if ($1 == 2) {print "RUNNING"}
+  else if ($1 == 5) {print "HELD"}
+  else {print "OTHER"}
+}'
