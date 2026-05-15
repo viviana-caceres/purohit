@@ -147,12 +147,12 @@ class PERerun:
 
         config_path = self.config_paths[event]
         print(config_path)
-        webdir = f"/home/vaishak.prasad/public_html/rean/{event}"
+        webdir = f"/home/viviana.caceres/public_html/rean/{event}"
         outdir = f"{os.path.dirname(config_path)}/pe"
         print(outdir)
         command = f"sed -i '/^label/c\\label={event}_p2' {config_path}"
         out = self.run_cmd(command, shell=True,  capture_output=True, text=True)
-        command = f"sed -i '/^accounting-user/c\\accounting-user=vaishak.prasad' {config_path}"
+        command = f"sed -i '/^accounting-user/c\\accounting-user=viviana.caceres' {config_path}"
         out = self.run_cmd(command, shell=True,  capture_output=True, text=True)
         command = f"sed -i '/^outdir/c\\outdir={outdir}' {config_path}"
         out = self.run_cmd(command, shell=True,  capture_output=True, text=True)
